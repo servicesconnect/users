@@ -1,5 +1,5 @@
 import { ObjectId } from "mongoose";
-import { IRatingCategories } from "./review.interface";
+import { IRatingCategories } from "./reviews.interface";
 
 export interface IBuyerDocument {
   _id?: string | ObjectId;
