@@ -5,3 +5,4 @@ export * from "./cloudinary";
 export * from "./gateway-middleware";
 export * from "./elasticsearch";
 export * from "./error-handler";
+export * from "./amqp";

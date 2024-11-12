@@ -22,7 +22,16 @@ import helmet from "helmet";
 import cors from "cors";
 import { verify } from "jsonwebtoken";
 import compression from "compression";
+import { Channel } from "amqplib";
+
 import { appRoutes } from "@users/routes";
+import { createQueueConnection } from "./config/amqp";
+import {
+  consumeBuyerDirectMessage,
+  consumeReviewFanoutMessages,
+  consumeSeedGigDirectMessages,
+  consumeSellerDirectMessage,
+} from "./queues/";
 
 const log: Logger = winstonLogger("usersServer", "debug");
 
@@ -30,6 +39,7 @@ const start = (app: Application): void => {
   securityMiddleware(app);
   standardMiddleware(app);
   routesMiddleware(app);
+  startQueues();
   startElasticSearch();
   usersErrorHandler(app);
   startServer(app);
@@ -67,6 +77,14 @@ const standardMiddleware = (app: Application): void => {
 
 const routesMiddleware = (app: Application): void => {
   appRoutes(app);
+};
+
+const startQueues = async (): Promise<void> => {
+  const userChannel: Channel = (await createQueueConnection()) as Channel;
+  await consumeBuyerDirectMessage(userChannel);
+  await consumeSellerDirectMessage(userChannel);
+  await consumeReviewFanoutMessages(userChannel);
+  await consumeSeedGigDirectMessages(userChannel);
 };
 
 const startElasticSearch = (): void => {

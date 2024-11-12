@@ -12,15 +12,15 @@ const elasticSearchClient = new Client({
 export async function startAndCheckElasticConnection(): Promise<void> {
   let isConnected = false;
   while (!isConnected) {
-    log.info("AuthService connecting to ElasticSearch...");
+    log.info("UsersService connecting to ElasticSearch...");
     try {
       const health: ClusterHealthResponse =
         await elasticSearchClient.cluster.health({});
-      log.info(`AuthService Elasticsearch health status - ${health.status}`);
+      log.info(`UsersService Elasticsearch health status - ${health.status}`);
       isConnected = true;
     } catch (error) {
       log.error("Connection to Elasticsearch failed. Retrying...");
-      log.log("error", "AuthService checkConnection() method:", error);
+      log.log("error", "UsersService checkConnection() method:", error);
     }
   }
 }
