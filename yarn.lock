@@ -336,6 +336,11 @@
     tslib "^2.4.0"
     undici "^6.12.0"
 
+"@faker-js/faker@^9.2.0":
+  version "9.2.0"
+  resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-9.2.0.tgz#269ee3a5d2442e88e10d984e106028422bcb9551"
+  integrity sha512-ulqQu4KMr1/sTFIYvqSdegHT8NIkt66tFAkugGnHA+1WAfEn6hMzNR+svjXGFRVLnapxvej67Z/LwchFrnLBUg==
+
 "@hapi/hoek@^9.0.0", "@hapi/hoek@^9.3.0":
   version "9.3.0"
   resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.3.0.tgz#8368869dcb735be2e7f5cb7647de78e167a251fb"
@@ -727,13 +732,6 @@
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@tsconfig/node16/-/node16-1.0.4.tgz#0b92dcc0cc1c81f6f306a381f28e31b1a56536e9"
   integrity sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==
-
-"@types/amqp@^0.2.8":
-  version "0.2.8"
-  resolved "https://registry.yarnpkg.com/@types/amqp/-/amqp-0.2.8.tgz#747854060da35bb5c7ce9c18045b5250db564c48"
-  integrity sha512-RR4gxpfXiKJe9LrGLW1KYpnyypK4k/OU0NG3XGKl8Wtb8txOiZ8W2idOQooWYOe5ABiQcH+UHMNgkT/JCZeUxg==
-  dependencies:
-    "@types/node" "*"
 
 "@types/amqplib@^0.10.5":
   version "0.10.5"
