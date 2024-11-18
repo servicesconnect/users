@@ -40,6 +40,6 @@ export const buyerDocument: IBuyerDocument = {
   country: "Brazil",
   profilePicture: "",
   isSeller: false,
-  purchasedGigs: [],
+  purchasedProjects: [],
   createdAt: "2023-12-19T07:42:24.431Z",
 };

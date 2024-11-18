@@ -46,22 +46,22 @@ const updateBuyerIsSellerProp = async (email: string): Promise<void> => {
   ).exec();
 };
 
-const updateBuyerPurchasedGigsProp = async (
+const updateBuyerPurchasedProjectsProp = async (
   buyerId: string,
-  purchasedGigId: string,
+  purchasedProjectId: string,
   type: string
 ): Promise<void> => {
   await BuyerModel.updateOne(
     { _id: buyerId },
-    type === "purchased-gigs"
+    type === "purchased-projects"
       ? {
           $push: {
-            purchasedGigs: purchasedGigId,
+            purchasedProjects: purchasedProjectId,
           },
         }
       : {
           $pull: {
-            purchasedGigs: purchasedGigId,
+            purchasedProjects: purchasedProjectId,
           },
         }
   ).exec();
@@ -73,5 +73,5 @@ export {
   getRandomBuyers,
   createBuyer,
   updateBuyerIsSellerProp,
-  updateBuyerPurchasedGigsProp,
+  updateBuyerPurchasedProjectsProp,
 };

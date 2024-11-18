@@ -8,7 +8,7 @@ export interface IBuyerDocument {
   profilePicture?: string;
   country: string;
   isSeller?: boolean;
-  purchasedGigs: string[];
+  purchasedProjects: string[];
   createdAt?: Date | string;
   updatedAt?: Date | string;
 }
@@ -91,7 +91,7 @@ export interface ISellerDocument extends Record<string, SellerType> {
   completedJobs?: number;
   cancelledJobs?: number;
   totalEarnings?: number;
-  totalGigs?: number;
+  totalProjects?: number;
   paypal?: string; // not needed
   createdAt?: Date | string;
 }

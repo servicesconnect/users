@@ -124,7 +124,7 @@ const sellerSchema: ObjectSchema = Joi.object().keys({
   completedJobs: Joi.number().optional(),
   cancelledJobs: Joi.number().optional(),
   totalEarnings: Joi.number().optional(),
-  totalGigs: Joi.number().optional(),
+  totalProjects: Joi.number().optional(),
   createdAt: Joi.string().optional(),
 });
 

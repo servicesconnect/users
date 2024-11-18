@@ -80,13 +80,13 @@ const updateSeller = async (
   return updatedSeller;
 };
 
-const updateTotalGigsCount = async (
+const updateTotalProjectsCount = async (
   sellerId: string,
   count: number
 ): Promise<void> => {
   await SellerModel.updateOne(
     { _id: sellerId },
-    { $inc: { totalGigs: count } }
+    { $inc: { totalProjects: count } }
   ).exec();
 };
 
@@ -163,7 +163,7 @@ export {
   getRandomSellers,
   createSeller,
   updateSeller,
-  updateTotalGigsCount,
+  updateTotalProjectsCount,
   updateSellerOngoingJobsProp,
   updateSellerCompletedJobsProp,
   updateSellerReview,

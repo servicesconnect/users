@@ -29,7 +29,7 @@ import { createQueueConnection } from "./config/amqp";
 import {
   consumeBuyerDirectMessage,
   consumeReviewFanoutMessages,
-  consumeSeedGigDirectMessages,
+  consumeSeedProjectDirectMessages,
   consumeSellerDirectMessage,
 } from "./queues/";
 
@@ -84,7 +84,7 @@ const startQueues = async (): Promise<void> => {
   await consumeBuyerDirectMessage(userChannel);
   await consumeSellerDirectMessage(userChannel);
   await consumeReviewFanoutMessages(userChannel);
-  await consumeSeedGigDirectMessages(userChannel);
+  await consumeSeedProjectDirectMessages(userChannel);
 };
 
 const startElasticSearch = (): void => {

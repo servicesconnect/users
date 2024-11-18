@@ -4,7 +4,7 @@ export interface IOrderMessage {
   ongoingJobs?: number;
   completedJobs?: number;
   totalEarnings?: number;
-  purchasedGigs?: string;
+  purchasedProjects?: string;
   recentDelivery?: string;
   type?: string;
   receiverEmail?: string;
